@@ -1,4 +1,4 @@
-package ch.epfl.alpano.gui;
+package ch.epfl.alpano.image;
 
 /**
  * A functional interface representing an image painter
