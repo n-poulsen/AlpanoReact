@@ -40,7 +40,7 @@ public final class Summit {
     }
 
     /**
-     * Give the name of this summit
+     * Gives the name of this summit
      * 
      * @return the name of this
      */
@@ -49,7 +49,7 @@ public final class Summit {
     }
 
     /**
-     * Give the position of this (a GeoPoint)
+     * Gives the position of this (a GeoPoint)
      * 
      * @return the position of this
      */
@@ -58,7 +58,7 @@ public final class Summit {
     }
 
     /**
-     * Give the altitude of this (in meters)
+     * Gives the altitude of this (in meters)
      * 
      * @return the altitude of this
      */
