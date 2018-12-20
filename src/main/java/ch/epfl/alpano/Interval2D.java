@@ -3,8 +3,7 @@ package ch.epfl.alpano;
 /**
  * Represents a two-dimensional interval of integers
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 import static ch.epfl.alpano.Preconditions.checkArgument;

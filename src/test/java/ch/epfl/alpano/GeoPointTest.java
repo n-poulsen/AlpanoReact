@@ -1,12 +1,5 @@
 package ch.epfl.alpano;
 
-/**
- * Test the class GeoPoint
- *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
- */
-
 import static org.junit.Assert.assertEquals;
 import static ch.epfl.alpano.Math2.PI2;
 import static java.lang.Math.PI;

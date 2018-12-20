@@ -3,8 +3,7 @@ package ch.epfl.alpano;
 /**
  * Regroups methods for manipulating azimuths (in radians)
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 import static java.lang.Math.PI;

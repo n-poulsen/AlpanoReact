@@ -3,8 +3,7 @@ package ch.epfl.alpano;
 /**
  * Contains methods which can be used to check that a precondition is satisfied
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 public interface Preconditions {

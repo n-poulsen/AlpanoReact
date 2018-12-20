@@ -6,12 +6,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-/**
- * 
- *
- *
- */
-
 public class PanoramaParametersTest {
 	
 	PanoramaParameters pp=new PanoramaParameters(new GeoPoint(0,0),1000,PI/12, PI/3, 100000, 8, 8);

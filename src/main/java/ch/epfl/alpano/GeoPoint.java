@@ -4,8 +4,7 @@ package ch.epfl.alpano;
  * Represents a point on the surface of the earth, with a certain latitude and
  * longitude
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 import static java.lang.Math.PI;
 import static java.lang.Math.asin;

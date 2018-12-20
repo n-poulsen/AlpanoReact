@@ -1,11 +1,5 @@
 package ch.epfl.alpano.summit;
 
-/**
- *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
- */
-
 import static org.junit.Assert.*;
 import static java.lang.Math.*;
 

@@ -4,13 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-/**
- * 
- *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
- */
-
 public class Interval1DTest {
 
 	@Test

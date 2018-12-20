@@ -3,8 +3,7 @@ package ch.epfl.alpano.summit;
 /**
  * Reads a specific kind of file to extract informations about summits 
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 import static java.nio.charset.StandardCharsets.US_ASCII;

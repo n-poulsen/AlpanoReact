@@ -22,8 +22,7 @@ import ch.epfl.alpano.GeoPoint;
  * origin to an end location given through its azimuth with the origin and its
  * distance (in meters) from it.
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 public final class ElevationProfile {

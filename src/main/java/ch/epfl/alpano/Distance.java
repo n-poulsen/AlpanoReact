@@ -3,9 +3,8 @@ package ch.epfl.alpano;
 /**
  * Contains methods that converts distances on the earth's surface (meters <=>
  * radians) and attributes characterizing the earth
- * 
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ *
+ * @author Niels Poulsen
  */
 
 public interface Distance {

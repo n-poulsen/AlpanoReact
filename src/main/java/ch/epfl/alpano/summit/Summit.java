@@ -3,8 +3,7 @@ package ch.epfl.alpano.summit;
 /**
  * Represents a summit
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 import static java.util.Objects.requireNonNull;

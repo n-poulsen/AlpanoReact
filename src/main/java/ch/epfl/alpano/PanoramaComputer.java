@@ -5,8 +5,7 @@ package ch.epfl.alpano;
  * panorama, their distance from the observer, their slope, their elevation,
  * etc.
  *
- * @author Ghali Chraibi (262251)
- * @author Niels Poulsen (270494)
+ * @author Niels Poulsen
  */
 
 import static ch.epfl.alpano.Distance.EARTH_RADIUS;
