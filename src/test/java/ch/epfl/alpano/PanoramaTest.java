@@ -1,6 +1,6 @@
 package ch.epfl.alpano;
 
-import static ch.epfl.test.TestRandomizer.newRandom;
+import static ch.epfl.alpano.TestRandomizer.newRandom;
 import static java.lang.Math.toRadians;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertSame;

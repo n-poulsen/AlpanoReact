@@ -24,10 +24,10 @@ import java.util.Locale;
 public final class GeoPoint {
 
     /** The latitude of the GeoPoint (in radians) */
-    private final double latitude_;
+    private final double latitude;
 
     /** The longitude of the GeoPoint (in radians) */
-    private final double longitude_;
+    private final double longitude;
 
     /**
      * Constructs a point on the surface of the earth by attributing it a
@@ -48,8 +48,8 @@ public final class GeoPoint {
         checkArgument((latitude >= -PI / 2) && (latitude <= PI / 2),
                 "Invalid latitude");
 
-        latitude_ = latitude;
-        longitude_ = longitude;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     /**
@@ -58,7 +58,7 @@ public final class GeoPoint {
      * @return the longitude of this (in radians)
      */
     public double longitude() {
-        return longitude_;
+        return longitude;
     }
 
     /**
@@ -67,7 +67,7 @@ public final class GeoPoint {
      * @return the latitude of this GeoPoint (in radians)
      */
     public double latitude() {
-        return latitude_;
+        return latitude;
     }
 
     /**

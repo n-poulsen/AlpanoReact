@@ -17,31 +17,31 @@ import static java.util.Objects.requireNonNull;
 public final class PanoramaParameters {
 
     /** The position of the observer who is seeing the panorama */
-    private final GeoPoint observerPosition_;
+    private final GeoPoint observerPosition;
 
     /** The elevation of the observer who is seeing the panorama, in meters */
-    private final int observerElevation_;
+    private final int observerElevation;
 
     /** The azimuth of the center of the panorama (from the north) in radians */
-    private final double centerAzimuth_;
+    private final double centerAzimuth;
 
     /** The angle representing how wide the observers view is, in radians */
-    private final double horizontalFieldOfView_;
+    private final double horizontalFieldOfView;
 
     /** The furthest the observer can see, in meters */
-    private final int maxDistance_;
+    private final int maxDistance;
 
     /** The width of the panorama that will be drawn, in pixels */
-    private final int width_;
+    private final int width;
 
     /** The height of the panorama that will be drawn, in pixels */
-    private final int height_;
+    private final int height;
 
     /** The angle in between two consecutive pixels */
-    private final double delta_;
+    private final double delta;
     
     /** The angle reprenting how large is the peripheral view of the observers, in radians */
-    private final double verticalFieldOfView_;
+    private final double verticalFieldOfView;
 
     /**
      * Constructs a new set of parameters needed to draw a panorama
@@ -62,7 +62,7 @@ public final class PanoramaParameters {
      *            the width of the panorama that will be drawn, in pixels
      * @param height
      *            the height of the panorama that will be drawn, in pixels
-     * @throws NullpointerException
+     * @throws NullPointerException
      *             if the observers position is null
      * @throws IllegalArgumentException
      *             if the center azimuth is not canonical, the horizontal field
@@ -73,7 +73,7 @@ public final class PanoramaParameters {
     public PanoramaParameters(GeoPoint observerPosition, int observerElevation,
             double centerAzimuth, double horizontalFieldOfView, int maxDistance,
             int width, int height) {
-        observerPosition_ = requireNonNull(observerPosition,
+        this.observerPosition = requireNonNull(observerPosition,
                 "The GeoPoint representing the observers position is null");
         checkArgument(isCanonical(centerAzimuth),
                 "The azimuth is not canonical");
@@ -81,14 +81,14 @@ public final class PanoramaParameters {
                 "The horizontal field of view is invalid");
         checkArgument(maxDistance > 0 && width > 1 && height > 1,
                 "The components of the panorama are not strictly positive");
-        centerAzimuth_ = centerAzimuth;
-        observerElevation_ = observerElevation;
-        horizontalFieldOfView_ = horizontalFieldOfView;
-        maxDistance_ = maxDistance;
-        width_ = width;
-        height_ = height;
-        delta_ = horizontalFieldOfView_ / (width_ - 1);
-        verticalFieldOfView_ = delta_ * (height_ - 1);
+        this.centerAzimuth = centerAzimuth;
+        this.observerElevation = observerElevation;
+        this.horizontalFieldOfView = horizontalFieldOfView;
+        this.maxDistance = maxDistance;
+        this.width = width;
+        this.height = height;
+        delta = this.horizontalFieldOfView / (this.width - 1);
+        verticalFieldOfView = delta * (this.height - 1);
     }
 
     /**
@@ -105,7 +105,7 @@ public final class PanoramaParameters {
         checkArgument(x >= 0 && x <= width() - 1,
                 "The index is not in the field of view");
         double westAzimuth = centerAzimuth() - (0.5 * horizontalFieldOfView());
-        return canonicalize(westAzimuth + delta_ * x);
+        return canonicalize(westAzimuth + delta * x);
     }
 
     /**
@@ -123,7 +123,7 @@ public final class PanoramaParameters {
         checkArgument(isCanonical(a), "The angle is not canonical");
         checkArgument(abs(angularDistance) <= 0.5 * horizontalFieldOfView(),
                 "The angle is not in the field of view");
-        return (width() - 1) / 2.0 + (angularDistance / delta_);
+        return (width() - 1) / 2.0 + (angularDistance / delta);
     }
 
     /**
@@ -139,7 +139,7 @@ public final class PanoramaParameters {
     public double altitudeForY(double y) {
         checkArgument(y >= 0 && y <= height() - 1,
                 "The index is not in the field of view");
-        return (0.5 * verticalFieldOfView()) - delta_ * y;
+        return (0.5 * verticalFieldOfView()) - delta * y;
     }
 
     /**
@@ -155,7 +155,7 @@ public final class PanoramaParameters {
     public double yForAltitude(double a) {
         checkArgument(abs(a) <= 0.5 * verticalFieldOfView(),
                 "The altitude is not in the field of view");
-        return (0.5 * verticalFieldOfView() - a) / delta_;
+        return (0.5 * verticalFieldOfView() - a) / delta;
     }
 
     /**
@@ -191,7 +191,7 @@ public final class PanoramaParameters {
      * @return the position of the observer
      */
     public GeoPoint observerPosition() {
-        return observerPosition_;
+        return observerPosition;
     }
 
     /**
@@ -201,7 +201,7 @@ public final class PanoramaParameters {
      *         meters)
      */
     public int observerElevation() {
-        return observerElevation_;
+        return observerElevation;
     }
 
     /**
@@ -210,7 +210,7 @@ public final class PanoramaParameters {
      * @return the azimuth in the middle of the observers view (in radians)
      */
     public double centerAzimuth() {
-        return centerAzimuth_;
+        return centerAzimuth;
     }
 
     /**
@@ -220,7 +220,7 @@ public final class PanoramaParameters {
      *         radians)
      */
     public double horizontalFieldOfView() {
-        return horizontalFieldOfView_;
+        return horizontalFieldOfView;
     }
 
     /**
@@ -229,7 +229,7 @@ public final class PanoramaParameters {
      * @return the maximum distance the observer can see (in meters)
      */
     public int maxDistance() {
-        return maxDistance_;
+        return maxDistance;
     }
 
     /**
@@ -238,7 +238,7 @@ public final class PanoramaParameters {
      * @return the width of the image, in pixels
      */
     public int width() {
-        return width_;
+        return width;
     }
 
     /**
@@ -247,7 +247,7 @@ public final class PanoramaParameters {
      * @return the height of the image, in pixels
      */
     public int height() {
-        return height_;
+        return height;
     }
 
     /**
@@ -256,7 +256,7 @@ public final class PanoramaParameters {
      * @return the vertical field of view, in radians
      */
     public double verticalFieldOfView() {
-        return verticalFieldOfView_;
+        return verticalFieldOfView;
     }
 
 }
